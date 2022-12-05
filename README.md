@@ -38,7 +38,9 @@ $$ Z_{IMU} = \begin{bmatrix} 0 & 0 & 1\end{bmatrix} \begin{bmatrix} x_{k+1} \cr 
 where $V_{IMU}$ is the sensor noise with covariance $$R_{IMU} = 0.25$$
 
 #### Measurement: Camera
-We have YOLOv5 running on the camera output to recognize the chair ang give us a bounding box. Based on this bounding box, we are identifying the position of the chair by finding the centre and the deviation from its last state to measure it's displacement. This gives us one input for the chair's position. Since we are identifying position from angular deviation, a non-linear function is used, and hence a Extended Kalman Filter is implemented here.
+We have YOLOv5 running on the camera output to recognize the chair ang give us a bounding box. Based on this bounding box, we are identifying the position of the chair by finding the centre and the deviation from its last state to measure it's displacement. This gives us one input for the chair's position. Since we are identifying position from angular deviation, a non-linear function is used, and hence a Extended Kalman Filter is implemented here. Here's an image of what the camera sees
+
+<img title="Camera Output" src="Camera_output.png">
 
 We are assuming that the chair has a linear motion. Based on this, it's displacement from the optical center of the camera can be given by;
 
@@ -73,7 +75,9 @@ This error is corrected to a signifcantly lower value by the addition of camera 
 
 <img title="Ground Truth vs EKF Estimate" src="gtvsekf.svg">
 
-The resultant errors are as follows
+The resultant errors are as follows:
+
+
 
 
 
