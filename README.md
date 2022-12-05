@@ -75,13 +75,5 @@ This error is corrected to a signifcantly lower value by the addition of camera 
 
 <img title="Ground Truth vs EKF Estimate" src="gtvsekf.svg">
 
-The resultant errors are as follows:
 
-
-
-
-
-
-
-
-
+Clearly, without the camera update the estimate diverges to no end, and the camera measurement limits the error to stable value.
